@@ -30,7 +30,7 @@ class RegisterForm extends Form {
 
        const {headers} =  await userService.register(this.state.data); 
        localStorage.setItem('token', headers['x-auth-token']); 
-       this.props.history.push('/'); 
+       window.location = '/'; 
 
     }
 
