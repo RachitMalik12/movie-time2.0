@@ -17,13 +17,13 @@ import "./App.css";
 
 
 
+
 class App extends Component {
 
-  state = {
-   
-  } 
+  state = {}; 
   componentDidMount() {
-    const user = auth.getCurrentUser(); 
+  
+   const user = auth.getCurrentUser(); 
     this.setState({user}); 
   
 
