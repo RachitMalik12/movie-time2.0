@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Table from "./common/table";
 import Like from "./common/like";
+import auth from "../services/authService";
+
 
 class MoviesTable extends Component {
   columns = [
@@ -22,7 +24,8 @@ class MoviesTable extends Component {
     {
       key: "delete",
       content: movie => (
-        <button
+      
+       auth.getCurrentUser() && auth.getCurrentUser().isAdmin && <button
           onClick={() => this.props.onDelete(movie)}
           className="btn btn-danger btn-sm"
         >
